@@ -1,0 +1,10 @@
+*.zip
+*.7z
+*.tar.gz
+*.rar
+runtime/
+*.log
+.env
+node_modules/
+__pycache__/
+.DS_Store
