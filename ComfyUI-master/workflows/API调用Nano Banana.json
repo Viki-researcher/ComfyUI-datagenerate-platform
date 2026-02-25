@@ -1,0 +1,2124 @@
+{
+  "id": "1e2cce51-5266-438f-9f02-060b0c1bd8eb",
+  "revision": 0,
+  "last_node_id": 134,
+  "last_link_id": 113,
+  "nodes": [
+    {
+      "id": 47,
+      "type": "SaveImage",
+      "pos": [
+        2474.313631921528,
+        1682.1392726141041
+      ],
+      "size": [
+        1161,
+        1625.25
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 64
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 48,
+      "type": "ImageConcatMulti",
+      "pos": [
+        1374.3371942780184,
+        1768.7861202666354
+      ],
+      "size": [
+        447.125,
+        841.875
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像_1",
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 65
+        },
+        {
+          "label": "图像_2",
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 66
+        },
+        {
+          "label": "输入数量",
+          "name": "inputcount",
+          "type": "INT",
+          "widget": {
+            "name": "inputcount"
+          },
+          "link": null
+        },
+        {
+          "label": "方向",
+          "name": "direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "direction"
+          },
+          "link": null
+        },
+        {
+          "label": "匹配尺寸",
+          "name": "match_image_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "match_image_size"
+          },
+          "link": null
+        },
+        {
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 67
+        },
+        {
+          "name": "image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "图像",
+          "type": "IMAGE",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "c661baadd9683c0033cd2a6ad90157c6d099a6c2",
+        "Node name for S&R": "ImageConcatMulti",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        4,
+        "down",
+        true,
+        null
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 50,
+      "type": "ImageStitch",
+      "pos": [
+        1980.5988714029388,
+        1893.8592886849306
+      ],
+      "size": [
+        353.5,
+        686.375
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像1",
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 70
+        },
+        {
+          "label": "图像2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 71
+        },
+        {
+          "label": "方向",
+          "name": "direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "direction"
+          },
+          "link": null
+        },
+        {
+          "label": "匹配图像尺寸",
+          "name": "match_image_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "match_image_size"
+          },
+          "link": null
+        },
+        {
+          "label": "间距宽度",
+          "name": "spacing_width",
+          "type": "INT",
+          "widget": {
+            "name": "spacing_width"
+          },
+          "link": null
+        },
+        {
+          "label": "间距颜色",
+          "name": "spacing_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "spacing_color"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "ImageStitch",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "right",
+        true,
+        8,
+        "black"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 51,
+      "type": "Comfly_api_set",
+      "pos": [
+        -703.7412394146372,
+        2107.554765050592
+      ],
+      "size": [
+        387.890625,
+        214.625
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "apikey",
+          "type": "STRING",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "zhenzhen",
+        "ver": "adf9e0f39de29353810237fad96984456739fff3",
+        "Node name for S&R": "Comfly_api_set",
+        "aux_id": "T8mars/Comfyui-zhenzhen",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "zhenzhen",
+        "",
+        ""
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 52,
+      "type": "LoadImage",
+      "pos": [
+        -1730.1428188159061,
+        1576.8929265407116
+      ],
+      "size": [
+        960.875,
+        1204.375
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            65,
+            72
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "seedvr2 修复_00192_.png",
+        "image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "LoadImage",
+      "pos": [
+        -1705.3564598454263,
+        2820.579077273864
+      ],
+      "size": [
+        644.34375,
+        1067.578125
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            66,
+            73
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "seedvr2 修复_00190_.png",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 54,
+      "type": "LoadImage",
+      "pos": [
+        -999.9590351807623,
+        2873.097306509331
+      ],
+      "size": [
+        642.421875,
+        1004.171875
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            67,
+            74
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "seedvr2 修复_00191_ (1).png",
+        "image"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 55,
+      "type": "LoadImage",
+      "pos": [
+        -246.20646040912155,
+        2878.838341390315
+      ],
+      "size": [
+        600.53125,
+        1018.46875
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            68,
+            75
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "seedvr2 修复_00189_ (1).png",
+        "image"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 56,
+      "type": "Comfly_nano_banana2_edit",
+      "pos": [
+        611.3759402258559,
+        1633.686962554857
+      ],
+      "size": [
+        692.875,
+        1610.5
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 72
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 73
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 74
+        },
+        {
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 75
+        },
+        {
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image9",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image10",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image11",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image12",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image13",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image14",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 76
+        },
+        {
+          "name": "apikey",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "apikey"
+          },
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            64,
+            71
+          ]
+        },
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "image_url",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "zhenzhen",
+        "ver": "ad351e4cc2776aef203741297075074a2803e02a",
+        "Node name for S&R": "Comfly_nano_banana2_edit",
+        "aux_id": "T8mars/Comfyui-zhenzhen",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "prompt": true,
+            "apikey": true
+          },
+          "version": "7.2.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Place the furniture from Figures 2, 3, and 4 into the space shown in Figure 1 to blend it naturally.",
+        "img2img",
+        "nano-banana-2",
+        "9:16",
+        "4K",
+        "",
+        "url",
+        1659348125,
+        "randomize"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "CR Text",
+      "pos": [
+        -737.8765898687634,
+        1686.9621426840945
+      ],
+      "size": [
+        637.4375,
+        406.1875
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "文本",
+          "name": "文本",
+          "type": "*",
+          "links": [
+            76
+          ]
+        },
+        {
+          "label": "显示帮助",
+          "name": "显示帮助",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Text",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "把上衣修改为绿色"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 91,
+      "type": "SaveImage",
+      "pos": [
+        -10.688356227644363,
+        68.60225385833746
+      ],
+      "size": [
+        787.421875,
+        962.875
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 89
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 92,
+      "type": "Comfly_api_set",
+      "pos": [
+        -1610.9896753298074,
+        671.8113815228932
+      ],
+      "size": [
+        439.625,
+        382.875
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "apikey",
+          "type": "STRING",
+          "links": [
+            91
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "zhenzhen",
+        "ver": "adf9e0f39de29353810237fad96984456739fff3",
+        "Node name for S&R": "Comfly_api_set",
+        "aux_id": "T8mars/Comfyui-zhenzhen",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "zhenzhen",
+        "",
+        ""
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 93,
+      "type": "Comfly_nano_banana2_edit",
+      "pos": [
+        -901.1657888401523,
+        18.350175748588544
+      ],
+      "size": [
+        638.734375,
+        1107.3125
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image8",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image9",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image10",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image11",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image12",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image13",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image14",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 90
+        },
+        {
+          "name": "apikey",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "apikey"
+          },
+          "link": 91
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            89
+          ]
+        },
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "image_url",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "zhenzhen",
+        "ver": "ad351e4cc2776aef203741297075074a2803e02a",
+        "Node name for S&R": "Comfly_nano_banana2_edit",
+        "aux_id": "T8mars/Comfyui-zhenzhen",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "prompt": true,
+            "apikey": true
+          },
+          "version": "7.2.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "text2img",
+        "nano-banana-2",
+        "3:4",
+        "1K",
+        "",
+        "url",
+        2131203259,
+        "randomize"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 94,
+      "type": "CR Text",
+      "pos": [
+        -1702.9052563751488,
+        34.14301398155955
+      ],
+      "size": [
+        649.640625,
+        548.6875
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "文本",
+          "name": "文本",
+          "type": "*",
+          "links": [
+            90
+          ]
+        },
+        {
+          "label": "显示帮助",
+          "name": "显示帮助",
+          "type": "STRING"
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Text",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "草原场景，青绿草原延伸至远处，穿浅蓝色连衣裙的女生站在草原中，风扬起裙摆与及腰长发，她仰头闭眼感受风，右手抓着一把蒲公英，身后是淡蓝色天空下的远山轮廓，阳光洒在肩头形成柔光，氛围自由松弛，画面比例为2:3。\n"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 96,
+      "type": "LoadImage",
+      "pos": [
+        -1731.5160159488505,
+        -1765.3448659234173
+      ],
+      "size": [
+        545.765625,
+        1185.265625
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            110
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ruanxiu20.png",
+        "image"
+      ]
+    },
+    {
+      "id": 97,
+      "type": "LoadImage",
+      "pos": [
+        -1138.6966648446394,
+        -1665.846990173779
+      ],
+      "size": [
+        542.625,
+        1070.78125
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            111
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI_00347_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 99,
+      "type": "GeminiImage2Node",
+      "pos": [
+        658.6579052326462,
+        -1813.0118410688792
+      ],
+      "size": [
+        819.5,
+        1337.015625
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 112
+        },
+        {
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            95
+          ]
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "Node name for S&R": "GeminiImage2Node",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "prompt": true,
+            "model": true,
+            "seed": true,
+            "aspect_ratio": true,
+            "resolution": true,
+            "response_modalities": true,
+            "system_prompt": true
+          }
+        }
+      },
+      "widgets_values": [
+        "让图2中的女孩替换图1 中女孩的位置，",
+        "gemini-3-pro-image-preview",
+        543452714666760,
+        "randomize",
+        "16:9",
+        "2K",
+        "IMAGE",
+        "You are an expert image-generation engine. You must ALWAYS produce an image.\nInterpret all user input—regardless of format, intent, or abstraction—as literal visual directives for image composition.\nIf a prompt is conversational or lacks specific visual details, you must creatively invent a concrete visual scenario that depicts the concept.\nPrioritize generating the visual representation above any text, formatting, or conversational requests."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 100,
+      "type": "SaveImage",
+      "pos": [
+        1610.9451117623673,
+        -1801.540891187241
+      ],
+      "size": [
+        672.875,
+        1308.875
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 95
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 107,
+      "type": "LoadImage",
+      "pos": [
+        120.3059494649815,
+        4271.709420661391
+      ],
+      "size": [
+        1007.1875,
+        1584.53125
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            101
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.67",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "替换面部后的女孩 (1).png",
+        "image"
+      ]
+    },
+    {
+      "id": 108,
+      "type": "SaveImage",
+      "pos": [
+        2287.6206324623213,
+        4312.137492671441
+      ],
+      "size": [
+        1121.875,
+        1594
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 100
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.71",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 109,
+      "type": "PrimitiveString",
+      "pos": [
+        -503.5476021777134,
+        4681.678363255335
+      ],
+      "size": [
+        480.5,
+        250.890625
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "「YQ」gemini-3-pro-image-preview"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 110,
+      "type": "PrimitiveString",
+      "pos": [
+        -489.5410281907391,
+        4945.41597767509
+      ],
+      "size": [
+        461.125,
+        254
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "「CS」gemini-3-pro-image-preview"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 113,
+      "type": "HeiHe001_BananaImageNode",
+      "pos": [
+        1246.1339816524803,
+        4264.093939688553
+      ],
+      "size": [
+        931.875,
+        1602.5
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 101
+        },
+        {
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_8",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image_9",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "api_base_url",
+          "type": "STRING",
+          "widget": {
+            "name": "api_base_url"
+          },
+          "link": 108
+        },
+        {
+          "name": "model_type",
+          "type": "STRING",
+          "widget": {
+            "name": "model_type"
+          },
+          "link": 103
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            100
+          ]
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HeiHe001_BananaImageNode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "保持女孩、小狼、色调、光影、背景、环境不变，将照片比例调整为16:9",
+        "",
+        "http://152.53.166.72:3000",
+        "「Rim」gemini-3-pro-image-preview",
+        1,
+        "16:9",
+        60184,
+        "randomize",
+        0.95,
+        "4K",
+        true
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 114,
+      "type": "PrimitiveString",
+      "pos": [
+        -1125.9432528754055,
+        5052.255706877686
+      ],
+      "size": [
+        457.375,
+        266.390625
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "http://152.53.166.72:3000"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 115,
+      "type": "PrimitiveString",
+      "pos": [
+        -1134.5290507716165,
+        4573.161006306573
+      ],
+      "size": [
+        456.140625,
+        264.625
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "http://154.44.28.242:3000"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 116,
+      "type": "PrimitiveString",
+      "pos": [
+        -1123.3528216669692,
+        4829.992925735779
+      ],
+      "size": [
+        452.03125,
+        256.75
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "http://154.36.173.51:3000"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 118,
+      "type": "PrimitiveString",
+      "pos": [
+        -1139.8052068290394,
+        4312.266908153599
+      ],
+      "size": [
+        454.515625,
+        265.625
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            108
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "http://152.53.90.90:3000"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 119,
+      "type": "Note",
+      "pos": [
+        -1622.6264368167115,
+        4456.689547524098
+      ],
+      "size": [
+        388.890625,
+        374.5
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "香蕉2：「Rim」gemini-3-pro-image-preview\n           「CS」gemini-3-pro-image-preview\n           「YQ」gemini-3-pro-image-preview\n上述3个节点根据情况自选\n\n\nAPI链接URL端点选择（出现拥挤情况，随时切换线路）\nhttp://152.53.90.90:3000（推荐，内网直连）\nhttp://154.44.28.242:3000（香港百兆cn2）\nhttp://154.36.173.51:3000 （加尼福尼亚cn2）\nhttp://152.53.166.72:3000\n\n*出白图一般是由于API调用服务器拥挤造成，或者是谷歌算力导致，暂时误解。\n*推荐生成2K后进行高清放大，2K出白图少，4K出白图概率高一点。Nano Banana 4K也是先生成2k再高清放大。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 120,
+      "type": "PrimitiveString",
+      "pos": [
+        -499.16939862558985,
+        4425.399995567434
+      ],
+      "size": [
+        483.375,
+        241.125
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.1"
+        }
+      },
+      "widgets_values": [
+        "「Rim」gemini-3-pro-image-preview"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 132,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -2853.9150988833217,
+        1409.0829361026113
+      ],
+      "size": [
+        526.875,
+        404.75
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "可选连接",
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 133,
+      "type": "ImageBatchMulti",
+      "pos": [
+        183.33711570270648,
+        -1734.3671840631014
+      ],
+      "size": [
+        367.5,
+        383.625
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "图像_1",
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 110
+        },
+        {
+          "label": "图像_2",
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 111
+        },
+        {
+          "label": "输入数量",
+          "name": "inputcount",
+          "type": "INT",
+          "widget": {
+            "name": "inputcount"
+          },
+          "link": null
+        },
+        {
+          "label": "图像_3",
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "图像",
+          "type": "IMAGE",
+          "links": [
+            112
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.2.2",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "inputcount": true
+          }
+        }
+      },
+      "widgets_values": [
+        3,
+        null
+      ]
+    },
+    {
+      "id": 134,
+      "type": "LoadImage",
+      "pos": [
+        -526.5655005719667,
+        -1594.6999448720253
+      ],
+      "size": [
+        542.625,
+        1040.765625
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            113
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI_00347_.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      64,
+      56,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      65,
+      52,
+      0,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      66,
+      53,
+      0,
+      48,
+      1,
+      "IMAGE"
+    ],
+    [
+      67,
+      54,
+      0,
+      48,
+      5,
+      "IMAGE"
+    ],
+    [
+      68,
+      55,
+      0,
+      48,
+      6,
+      "IMAGE"
+    ],
+    [
+      70,
+      48,
+      0,
+      50,
+      0,
+      "IMAGE"
+    ],
+    [
+      71,
+      56,
+      0,
+      50,
+      1,
+      "IMAGE"
+    ],
+    [
+      72,
+      52,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      53,
+      0,
+      56,
+      1,
+      "IMAGE"
+    ],
+    [
+      74,
+      54,
+      0,
+      56,
+      2,
+      "IMAGE"
+    ],
+    [
+      75,
+      55,
+      0,
+      56,
+      3,
+      "IMAGE"
+    ],
+    [
+      76,
+      57,
+      0,
+      56,
+      14,
+      "STRING"
+    ],
+    [
+      77,
+      51,
+      0,
+      56,
+      15,
+      "STRING"
+    ],
+    [
+      89,
+      93,
+      0,
+      91,
+      0,
+      "IMAGE"
+    ],
+    [
+      90,
+      94,
+      0,
+      93,
+      14,
+      "STRING"
+    ],
+    [
+      91,
+      92,
+      0,
+      93,
+      15,
+      "STRING"
+    ],
+    [
+      95,
+      99,
+      0,
+      100,
+      0,
+      "IMAGE"
+    ],
+    [
+      100,
+      113,
+      0,
+      108,
+      0,
+      "IMAGE"
+    ],
+    [
+      101,
+      107,
+      0,
+      113,
+      0,
+      "IMAGE"
+    ],
+    [
+      103,
+      120,
+      0,
+      113,
+      10,
+      "STRING"
+    ],
+    [
+      108,
+      118,
+      0,
+      113,
+      9,
+      "STRING"
+    ],
+    [
+      110,
+      96,
+      0,
+      133,
+      0,
+      "IMAGE"
+    ],
+    [
+      111,
+      97,
+      0,
+      133,
+      1,
+      "IMAGE"
+    ],
+    [
+      112,
+      133,
+      0,
+      99,
+      0,
+      "IMAGE"
+    ],
+    [
+      113,
+      134,
+      0,
+      133,
+      3,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 6,
+      "title": "3、贞贞API调用Nano Banana---单图编辑/多图编辑（图生图）",
+      "bounding": [
+        -1785.651771249262,
+        1312.6959407523084,
+        5498.450916039195,
+        2547.238419804216
+      ],
+      "color": "#88A",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "2、贞贞API调用Nano Banana--文生图",
+      "bounding": [
+        -1774.0917489693086,
+        -193.531116049599,
+        2974.560555262911,
+        1315.1558996433916
+      ],
+      "color": "#8A8",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "1、官方调用Nano Banana---文生图/图生图",
+      "bounding": [
+        -1782.102055270059,
+        -2082.4686047278537,
+        4255.9190264964145,
+        1714.3059516378598
+      ],
+      "color": "#b06634",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "4、Banana Pro文生图/图生图",
+      "bounding": [
+        -1766.698377369908,
+        4037.640353078553,
+        5273.59111284856,
+        1885.1623670092317
+      ],
+      "color": "#8A8",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.12100000000000537,
+      "offset": [
+        6200.0538195870895,
+        2457.9451144627
+      ]
+    },
+    "frontendVersion": "1.34.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "workflowRendererVersion": "Vue"
+  },
+  "version": 0.4
+}
