@@ -1,15 +1,3 @@
-// 1. Vite启动时加载此配置文件
-//    ↓
-// 2. 执行导入语句，加载各种依赖
-//    ↓
-// 3. 调用导出的函数，传入mode参数
-//    ↓
-// 4. 读取环境变量文件
-//    ↓
-// 5. 返回defineConfig包装的配置对象
-//    ↓
-// 6. Vite使用此配置进行开发服务器或构建
-
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
@@ -23,10 +11,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import tailwindcss from '@tailwindcss/vite'
 // import { visualizer } from 'rollup-plugin-visualizer'
 
-//{ mode }     mode - 参数名
-// { mode: string }     mode - 属性名,string - 类型名，表示字符串
-//含义：导出一个默认的箭头函数，接收一个对象参数，对象有一个名为mode的字符串属性
-
 export default ({ mode }: { mode: string }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
@@ -39,9 +23,7 @@ export default ({ mode }: { mode: string }) => {
     define: {
       __APP_VERSION__: JSON.stringify(VITE_VERSION)
     },
-    //基础路径
     base: VITE_BASE_URL,
-    //开发服务器配置
     server: {
       port: Number(VITE_PORT),
       proxy: {
@@ -64,7 +46,6 @@ export default ({ mode }: { mode: string }) => {
         '@styles': resolvePath('src/assets/styles')
       }
     },
-    //构建配置
     build: {
       target: 'es2015',
       outDir: 'dist',
@@ -84,7 +65,6 @@ export default ({ mode }: { mode: string }) => {
         include: ['src/views/**/*.vue']
       }
     },
-    //插件配置
     plugins: [
       vue(),
       tailwindcss(),
@@ -143,7 +123,6 @@ export default ({ mode }: { mode: string }) => {
         'element-plus/es/components/*/style/index'
       ]
     },
-    //CSS配置
     css: {
       preprocessorOptions: {
         // sass variable and mixin
