@@ -15,11 +15,11 @@ document.addEventListener(
   { passive: false }
 )
 
-const app = createApp(App)
+const app = createApp(App)  // ① App.vue 只是“注册”，还没执行
 initStore(app)
-initRouter(app)
+initRouter(app)   // ② 注册路由
 setupGlobDirectives(app)
 setupErrorHandle(app)
 
 app.use(language)
-app.mount('#app')
+app.mount('#app')   // ③ 开始执行 App.vue

@@ -48,8 +48,8 @@
               />
             </ElFormItem>
 
-            <!-- 推拽验证 -->
-            <div class="relative pb-5 mt-6">
+            <!-- 推拽验证（开发联调可通过环境变量关闭） -->
+            <div v-if="!disableDragVerify" class="relative pb-5 mt-6">
               <div
                 class="relative z-[2] overflow-hidden select-none rounded-lg border border-transparent tad-300"
                 :class="{ '!border-[#FF4E4F]': !isPassing && isClickPass }"
@@ -71,6 +71,9 @@
               >
                 {{ $t('login.placeholder.slider') }}
               </p>
+            </div>
+            <div v-else class="mt-6 text-xs text-gray-500">
+              已关闭拖拽验证（VITE_DISABLE_DRAG_VERIFY=true）。
             </div>
 
             <div class="flex-cb mt-2 text-sm">
@@ -169,6 +172,7 @@
   const route = useRoute()
   const isPassing = ref(false)
   const isClickPass = ref(false)
+  const disableDragVerify = import.meta.env.VITE_DISABLE_DRAG_VERIFY === 'true'
 
   const systemName = AppConfig.systemInfo.name
   const formRef = ref<FormInstance>()
@@ -189,6 +193,7 @@
 
   onMounted(() => {
     setupAccount('super')
+    if (disableDragVerify) isPassing.value = true
   })
 
   // 设置账号
@@ -256,7 +261,8 @@
 
   // 重置拖拽验证
   const resetDragVerify = () => {
-    dragVerify.value.reset()
+    if (disableDragVerify) return
+    dragVerify.value?.reset?.()
   }
 
   // 登录成功提示

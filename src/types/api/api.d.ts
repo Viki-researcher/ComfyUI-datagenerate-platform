@@ -68,6 +68,13 @@ declare namespace Api {
       password: string
     }
 
+    /** 注册参数 */
+    interface RegisterParams {
+      username: string
+      email: string
+      password: string
+    }
+
     /** 登录响应 */
     interface LoginResponse {
       token: string
@@ -131,5 +138,90 @@ declare namespace Api {
       Pick<RoleListItem, 'roleId' | 'roleName' | 'roleCode' | 'description' | 'enabled'> &
         Api.Common.CommonSearchParams
     >
+  }
+
+  /** 数据生成平台业务类型 */
+  namespace DataGen {
+    interface Project {
+      id: number
+      name: string
+      code: string
+      note?: string
+      owner_user_id: number
+      owner_user_name?: string
+      create_time: string
+      update_time: string
+    }
+
+    interface CreateProjectParams {
+      name: string
+      code: string
+      note?: string
+    }
+
+    interface OpenComfyResponse {
+      comfy_url: string
+    }
+
+    interface LogCreateParams {
+      project_id: number
+      timestamp?: string
+      status: string
+      concurrent_id?: number
+      details?: any
+    }
+
+    interface LogListItem {
+      id: number
+      timestamp: string
+      user: string
+      project: string
+      status: string
+      details?: any
+      concurrent_id?: number
+    }
+
+    type LogList = Api.Common.PaginatedResponse<LogListItem>
+
+    type StatsDimension = 'day' | 'project' | 'user'
+
+    interface StatsDayItem {
+      date: string
+      count: number
+    }
+
+    interface GpuInfo {
+      utilization: number
+      memory_used: number
+      memory_total: number
+    }
+
+    interface GpuData {
+      available: boolean
+      gpus: GpuInfo[]
+    }
+
+    interface ServerStatsItem {
+      timestamp: number
+      cpu: number
+      memory: number
+      swap: number
+      disk: number
+      gpu: GpuData
+    }
+
+    interface ServerStats {
+      cpu: number
+      memory: number
+      swap: number
+      disk: number
+      gpu: GpuData
+      history: ServerStatsItem[]
+    }
+
+    interface ServerStatsHistory {
+      history: ServerStatsItem[]
+      max_points: number
+    }
   }
 }

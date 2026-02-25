@@ -42,13 +42,13 @@ export const setWorktab = (to: RouteLocationNormalized): void => {
 
       if (iframeRoute?.meta) {
         worktabStore.openTab({
-          title: iframeRoute.meta.title,
-          icon: meta.icon as string,
-          path,
-          name: name as string,
-          keepAlive: meta.keepAlive as boolean,
-          params,
-          query
+          title: iframeRoute.meta.title, // 页面标题
+          icon: meta.icon as string, // 图标
+          path, // 路由路径
+          name: name as string, // 路由名称
+          keepAlive: meta.keepAlive as boolean, // 是否缓存
+          params, // 路由参数
+          query // 查询参数
         })
       }
     } else if (useSettingStore().showWorkTab || path === useCommon().homePath.value) {
@@ -60,7 +60,7 @@ export const setWorktab = (to: RouteLocationNormalized): void => {
         keepAlive: meta.keepAlive as boolean,
         params,
         query,
-        fixedTab: meta.fixedTab as boolean
+        fixedTab: meta.fixedTab as boolean // 是否固定标签
       })
     }
   }

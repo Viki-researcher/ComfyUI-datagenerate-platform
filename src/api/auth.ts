@@ -15,6 +15,17 @@ export function fetchLogin(params: Api.Auth.LoginParams) {
 }
 
 /**
+ * 注册
+ */
+export function fetchRegister(params: Api.Auth.RegisterParams) {
+  return request.post<{ userId: number }>({
+    url: '/api/auth/register',
+    params,
+    showSuccessMessage: true
+  })
+}
+
+/**
  * 获取用户信息
  * @returns 用户信息
  */

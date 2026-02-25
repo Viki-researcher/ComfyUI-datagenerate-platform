@@ -9,38 +9,17 @@
             class="relative z-10 w-20 h-20 mt-30 mx-auto object-cover border-2 border-white rounded-full"
             src="@imgs/user/avatar.webp"
           />
-          <h2 class="mt-5 text-xl font-normal">{{ userInfo.userName }}</h2>
-          <p class="mt-5 text-sm">专注于用户体验跟视觉设计</p>
+          <h2 class="mt-5 text-xl font-normal">{{ userInfo.userName || '用户' }}</h2>
+          <p class="mt-5 text-sm">菲特数据生成平台用户</p>
 
           <div class="w-75 mx-auto mt-7.5 text-left">
             <div class="mt-2.5">
               <ArtSvgIcon icon="ri:mail-line" class="text-g-700" />
-              <span class="ml-2 text-sm">jdkjjfnndf@mall.com</span>
+              <span class="ml-2 text-sm">{{ userInfo.email || '未设置邮箱' }}</span>
             </div>
             <div class="mt-2.5">
               <ArtSvgIcon icon="ri:user-3-line" class="text-g-700" />
-              <span class="ml-2 text-sm">交互专家</span>
-            </div>
-            <div class="mt-2.5">
-              <ArtSvgIcon icon="ri:map-pin-line" class="text-g-700" />
-              <span class="ml-2 text-sm">广东省深圳市</span>
-            </div>
-            <div class="mt-2.5">
-              <ArtSvgIcon icon="ri:dribbble-fill" class="text-g-700" />
-              <span class="ml-2 text-sm">字节跳动－某某平台部－UED</span>
-            </div>
-          </div>
-
-          <div class="mt-10">
-            <h3 class="text-sm font-medium">标签</h3>
-            <div class="flex flex-wrap justify-center mt-3.5">
-              <div
-                v-for="item in lableList"
-                :key="item"
-                class="py-1 px-1.5 mr-2.5 mb-2.5 text-xs border border-g-300 rounded"
-              >
-                {{ item }}
-              </div>
+              <span class="ml-2 text-sm">{{ userInfo.email ? '已认证' : '未认证' }}</span>
             </div>
           </div>
         </div>
@@ -164,22 +143,22 @@
    * 用户信息表单
    */
   const form = reactive({
-    realName: 'John Snow',
-    nikeName: '皮卡丘',
-    email: '59301283@mall.com',
-    mobile: '18888888888',
-    address: '广东省深圳市宝安区西乡街道101栋201',
+    realName: '',
+    nikeName: '',
+    email: '',
+    mobile: '',
+    address: '',
     sex: '2',
-    des: 'Art Design Pro 是一款兼具设计美学与高效开发的后台系统.'
+    des: '菲特数据生成平台用户'
   })
 
   /**
    * 密码修改表单
    */
   const pwdForm = reactive({
-    password: '123456',
-    newPassword: '123456',
-    confirmPassword: '123456'
+    password: '',
+    newPassword: '',
+    confirmPassword: ''
   })
 
   /**
@@ -207,11 +186,6 @@
     { value: '1', label: '男' },
     { value: '2', label: '女' }
   ]
-
-  /**
-   * 用户标签列表
-   */
-  const lableList: Array<string> = ['专注设计', '很有想法', '辣~', '大长腿', '川妹子', '海纳百川']
 
   onMounted(() => {
     getDate()

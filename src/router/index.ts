@@ -8,10 +8,12 @@ import { setupAfterEachGuard } from './guards/afterEach'
 // 创建路由实例
 export const router = createRouter({
   history: createWebHashHistory(),
-  routes: staticRoutes // 静态路由
+  routes: staticRoutes // 静态路由  初始路由
 })
 
 // 初始化路由
+// 3. 真正“决定跳转到登录页”的地方在哪里？
+// ❗不是 index.html ❗不是 App.vue ❗而是：路由前置守卫（beforeEach）
 export function initRouter(app: App<Element>): void {
   configureNProgress() // 顶部进度条
   setupBeforeEachGuard(router) // 路由前置守卫

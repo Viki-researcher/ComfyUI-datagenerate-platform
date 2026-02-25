@@ -38,7 +38,7 @@ import { headerBarConfig } from './modules/headerBar'
 const appConfig: SystemConfig = {
   // 系统信息
   systemInfo: {
-    name: 'Art Design Pro' // 系统名称
+    name: '菲特数据生成平台' // 系统名称
   },
   // 系统主题
   systemThemeStyles: {

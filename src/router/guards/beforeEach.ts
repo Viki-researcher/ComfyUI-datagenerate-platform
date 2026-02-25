@@ -104,19 +104,31 @@ export function resetRouteInitState(): void {
 export function setupBeforeEachGuard(router: Router): void {
   // 初始化路由注册器
   routeRegistry = new RouteRegistry(router)
-
+  //每次路由变化（跳转前）都会触发 beforeEach 守卫（执行beforeEach）;to 参数包含目标路由信息，from 是来源路由;next() 函数控制导航行为
+  //router.beforeEach(async (to, from, next) => {   这行代码的意思是："让router在每次路由跳转前，执行一个异步函数，这个函数接收三个参数：to、from、next"
   router.beforeEach(
+    //这是箭头函数的参数列表开始
     async (
+      //to -参数名，表示"要跳转到的目标路由信息"
+      //from -参数名，表示"从哪个路由跳转过来"
+      //next -参数名，表示"下一步该做什么"的控制函数
       to: RouteLocationNormalized,
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
+      //=> - 箭头操作符，表示"函数的定义"，读作"映射到"
       try {
+        //await - 关键字，表示"等待这个异步操作完成"
+        //handleRouteGuard - 函数名，表示"处理路由守卫"的函数；
+        // 传入四个参数：to、from、next、router"，等待handleRouteGuard函数执行完成
         await handleRouteGuard(to, from, next, router)
       } catch (error) {
         console.error('[RouteGuard] 路由守卫处理失败:', error)
         closeLoading()
         next({ name: 'Exception500' })
+        //对象 { name: 'Exception500' } 是路由导航参数对象，用于告诉Vue Router"跳转到哪个路由"。
+        //name - 对象的属性名
+        //Exception500 - 字符串值，表示路由名称
       }
     }
   )
@@ -170,12 +182,16 @@ async function handleRouteGuard(
 
   // 3. 处理动态路由注册
   if (!routeRegistry?.isRegistered() && userStore.isLogin) {
+    // 同时满足两个条件才会触发初始化：
+    // 条件1: 路由未注册 (!routeRegistry?.isRegistered())
+    // 条件2: 用户已登录 (userStore.isLogin)
     // 防止并发请求（快速连续导航场景）
     if (routeInitInProgress) {
       // 正在初始化中，等待完成后重新导航
       next(false)
       return
     }
+    // 如果路由未注册且用户已登录，则进行初始化
     await handleDynamicRoutes(to, next, router)
     return
   }
@@ -187,7 +203,7 @@ async function handleRouteGuard(
 
   // 5. 处理已匹配的路由
   if (to.matched.length > 0) {
-    setWorktab(to)
+    setWorktab(to) // 为用户提供多标签页浏览体验，类似浏览器的标签页功能。
     setPageTitle(to)
     next()
     return
@@ -212,12 +228,12 @@ function handleLoginStatus(
   }
 
   // 未登录且访问需要权限的页面，跳转到登录页并携带 redirect 参数
-  userStore.logOut()
+  userStore.logOut() // 清除可能的残留登录状态
   next({
-    name: 'Login',
-    query: { redirect: to.fullPath }
+    name: 'Login', // 路由名称：跳转到登录页
+    query: { redirect: to.fullPath } // 查询参数：记录用户原本想访问的完整路径
   })
-  return false
+  return false // 阻止继续执行路由守卫
 }
 
 /**

@@ -2,7 +2,7 @@
 <template>
   <ElPopover
     ref="popoverRef"
-    :width="700"
+    :width="quickLinksOnly ? 200 : 700"
     :offset="0"
     :show-arrow="false"
     trigger="hover"
@@ -19,7 +19,8 @@
       </div>
     </template>
 
-    <div class="grid grid-cols-[2fr_0.8fr]">
+    <!-- 应用列表 + 快速链接（两栏布局） -->
+    <div v-if="!quickLinksOnly" class="grid grid-cols-[2fr_0.8fr]">
       <div>
         <div class="grid grid-cols-2 gap-1.5">
           <!-- 应用列表 -->
@@ -58,6 +59,21 @@
         </ul>
       </div>
     </div>
+
+    <!-- 仅快速链接（单栏布局） -->
+    <div v-else class="pt-2">
+      <h3 class="mb-2.5 text-base font-medium text-g-800">快速链接</h3>
+      <ul>
+        <li
+          v-for="quickLink in enabledQuickLinks"
+          :key="quickLink.name"
+          class="c-p py-2 hover:[&_span]:text-theme"
+          @click="handleQuickLinkClick(quickLink)"
+        >
+          <span class="text-g-600 no-underline">{{ quickLink.name }}</span>
+        </li>
+      </ul>
+    </div>
   </ElPopover>
 </template>
 
@@ -72,6 +88,9 @@
 
   // 使用快速入口配置
   const { enabledApplications, enabledQuickLinks } = useFastEnter()
+
+  // 判断是否仅显示快速链接
+  const quickLinksOnly = computed(() => !enabledApplications.value || enabledApplications.value.length === 0)
 
   /**
    * 处理导航跳转
